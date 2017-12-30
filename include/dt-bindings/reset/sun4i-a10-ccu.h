@@ -1,25 +1,20 @@
 /*
- * Copyright 2014 Siarhei Siamashka <siarhei.siamashka@xxxxxxxxx>
+ * Copyright (C) 2017 Priit Laes <plaes@plaes.org>
  *
  * This file is dual-licensed: you can use it either under the terms
  * of the GPL or the X11 license, at your option. Note that this dual
  * licensing only applies to this file, and not this project as a
  * whole.
  *
- *  a) This library is free software; you can redistribute it and/or
+ *  a) This file is free software; you can redistribute it and/or
  *     modify it under the terms of the GNU General Public License as
  *     published by the Free Software Foundation; either version 2 of the
  *     License, or (at your option) any later version.
  *
- *     This library is distributed in the hope that it will be useful,
+ *     This file is distributed in the hope that it will be useful,
  *     but WITHOUT ANY WARRANTY; without even the implied warranty of
  *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *     GNU General Public License for more details.
- *
- *     You should have received a copy of the GNU General Public
- *     License along with this library; if not, write to the Free
- *     Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
- *     MA 02110-1301 USA
  *
  * Or, alternatively,
  *
@@ -45,24 +40,30 @@
  *     OTHER DEALINGS IN THE SOFTWARE.
  */
 
-/dts-v1/;
-#include "sun7i-a20.dtsi"
-#include "sunxi-common-regulators.dtsi"
+#ifndef _DT_BINDINGS_RST_SUN4I_A10_H
+#define _DT_BINDINGS_RST_SUN4I_A10_H
 
-/ {
-	model = "MSI Primo73 tablet";
-	compatible = "msi,primo73", "allwinner,sun7i-a20";
+#define	RST_USB_PHY0		1
+#define	RST_USB_PHY1		2
+#define	RST_USB_PHY2		3
+#define	RST_GPS			4
+#define	RST_DE_BE0		5
+#define	RST_DE_BE1		6
+#define	RST_DE_FE0		7
+#define	RST_DE_FE1		8
+#define	RST_DE_MP		9
+#define	RST_TVE0		10
+#define	RST_TCON0		11
+#define	RST_TVE1		12
+#define	RST_TCON1		13
+#define	RST_CSI0		14
+#define	RST_CSI1		15
+#define	RST_VE			16
+#define	RST_ACE			17
+#define	RST_LVDS		18
+#define	RST_GPU			19
+#define	RST_HDMI_H		20
+#define	RST_HDMI_SYS		21
+#define	RST_HDMI_AUDIO_DMA	22
 
-	aliases {
-		serial0 = &uart0;
-	};
-
-	chosen {
-		stdout-path = "serial0:115200n8";
-	};
-
-	reg_usb2_vbus: usb2-vbus {
-		gpio = <&pio 7 12 0>; /* PH12 */
-		status = "okay";
-	};
-};
+#endif /* DT_BINDINGS_RST_SUN4I_A10_H */
