@@ -774,7 +774,7 @@ int ft_board_setup(void *blob, bd_t *bd)
 	return 0;
 }
 
-#ifdef CONFIG_SPL_LOAD_FIT
+#if defined(CONFIG_SPL_LOAD_FIT) || defined(CONFIG_MULTI_DTB_FIT)
 int board_fit_config_name_match(const char *name)
 {
 	struct boot_file_head *spl = (void *)(ulong)SPL_ADDR;
